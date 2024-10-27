@@ -4,13 +4,13 @@ This assignment practices SQL DDL. <!--  These are the same questions as on Prai
 
 ## Question 1 (10 marks)
 
-Write the SQL DDL to create the following 5 tables describing cooking: `Recipe`, `Ingredient`, `Author`, `Cook`, `Requires`:
+Write the SQL DDL to create the following 5 tables describing cooking: `Recipe`, `Ingredient`, `Author`, `Cook`, `Requires`. **Make sure that every table has a primary key.**
 
 - An `Author` table where each author is identified by an integer `id` and has a `name` (up to 30 characters).
   
 - An `Ingredient` table where each ingredient has an `id` of exactly 5 characters and a `name` (up to 30 characters).
   
-- A `Recipe` table where each recipe is identified by a field called `id` that is an integer. Other attributes include `name` (string up to 40 characters), `author id` (integer), and `directions` (string up to 255 characters). Make all foreign keys set to null on delete and no action (generate error) on update.
+- A `Recipe` table where each recipe is identified by a field called `id` that is an integer. Other attributes include `name` (string up to 40 characters), `authorId` (integer), and `directions` (string up to 255 characters). Make all foreign keys set to null on delete and no action (generate error) on update.
   
 - A `Cook` table where each time a recipe is made it is identified by a date/time (DATETIME). The table also has a `recipe id` and a `comment` (string up to 255 characters). Make all foreign keys set to perform cascade on delete and cascade on update.
   
@@ -67,4 +67,4 @@ Recipe for cookies was made on September 23rd, 2024 at 1:35:45 p.m. Comment: 'It
 
 ## Submission
 
-Submission is done on Canvas.
+**Submit the lab answers on Canvas as a text file or document that contains all of your SQL DDL commands or show a TA your SQL DDL commands in a help session.**

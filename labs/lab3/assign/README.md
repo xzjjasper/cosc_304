@@ -1,6 +1,6 @@
 # COSC 304 - Introduction to Database Systems<br>Assignment 3 - SQL
 
-This assignment is on writing queries in SQL. These questions can be completed either on [PrairieLearn](https://plcanary.ok.ubc.ca/pl/course_instance/6/assessment/143) or locally on your computer using Docker and MySQL. **Before starting the assignment, complete the [database setup using Docker](../setup)**.
+This assignment is on writing queries in SQL. These questions can be completed either on [PrairieLearn](https://plcanary.ok.ubc.ca/pl/course_instance/6/assessment/143) or locally on your computer using Docker and MySQL. **Before starting the assignment, complete the [database setup using Docker](../setup)**. **Submit the lab answers on Canvas as a text file or document that contains all of your SQL commands or show a TA your SQL commands in a help session.**
 
 ## Question 1 (20 marks)
 
@@ -43,7 +43,7 @@ shippedproduct(sid: integer, pid: integer, amount: integer)
 +-----+---------------------+-----+--------+
 ```
 
-3. Find all customers that have an `'R'` or `'T'` in their name or have a state of `'MI'` or `'IA'`. Order by customer name descending. 
+3. Find all customers that have an `'R'` or `'T'` in their name and have a state of `'MI'` or `'IA'`. Order by customer name descending. 
 
 #### Output:
 ```
@@ -56,7 +56,7 @@ shippedproduct(sid: integer, pid: integer, amount: integer)
   +-----+-----------------+---------------------+-----------+-------+
 ```
 
-4. Return a list of the unique product id and names that have shipped before with an amount less than `5`. Order by product id ascending.
+4. Return a list of the unique product id and names that have shipped before with an amount less than `5`. Order by product id descending.
 
 #### Output:
 ```
@@ -74,14 +74,14 @@ shippedproduct(sid: integer, pid: integer, amount: integer)
 +-----+-------------------------+
 ```
 
-5. For each state, return the number of customers in that state and the number of shipments for customers in that state. **Hint: `COUNT(DISTINCT *field*)` may be useful.** Only show states with at least 2 shipments. Order by number of shipments descending.
+5. For each state, return the number of customers in that state and the number of shipments for customers in that state. **Hint: `COUNT(DISTINCT *field*)` may be useful.** Only show states with at least 2 shipments. Order by number of shipments descending. Note: Count customers in a state even if they do not have any shipments.
 
 #### Output:
 ```
 +-------+--------------+--------------+
 | state | numCustomers | numShipments |
 +-------+--------------+--------------+
-| BC    |            3 |            7 |
+| BC    |            4 |            7 |
 | CA    |            2 |            6 |
 | IA    |            3 |            5 |
 | AB    |            1 |            2 |
@@ -115,7 +115,7 @@ shippedproduct(sid: integer, pid: integer, amount: integer)
 +-----+-----------------+----------------------+--------------------+-------------------+
 ```
 
-8. Return pairs of customers (only show a pair once) that have been shipped the same product. Return the number of times the pair of customers have been shipped the same product (`numShippedProducts`). Order by `numShippedProducts` descending, then first customer name ascending, and second customer name ascending. Note: If product 1 is in two shipments for customer 4 and two shipments for customer 15, that counts as 4 (2 x 2). We are not eliminating any duplicates when counting in this question.
+8. Return pairs of customers (only show a pair once) that have been shipped the same product. Return the number of times the pair of customers have been shipped the same product (`numShippedProducts`). Order by `numShippedProducts` descending, then first customer name ascending, and second customer name ascending. Note: If product 1 is in two shipments for customer 4 and two shipments for customer 15, that counts as 4 (2 x 2). We are not eliminating any duplicates when counting in this question. Show customer pairs that have 5 or more times that they have been shipped the same product.
 
 #### Output:
 ```
